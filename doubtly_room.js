@@ -14,6 +14,7 @@
 firebase.initializeApp(firebaseConfig);
 
 var user_name=localStorage.getItem("user_name");
+room_name=localStorage.getItem("room_name");
 document.getElementById("user_name").innerHTML="Welcome "+user_name+"!";
 
 function addRoom()
@@ -42,4 +43,10 @@ function redirectToRoomName(name)
   console.log(name);
   localStorage.setItem("room_name",name);
   window.location="doubtly_page.html";
+}
+
+function logout(){
+  localStorage.removeItem("username");
+  localStorage.removeItem("room_name");
+  window.location="index.html";
 }
